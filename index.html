@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .wrap {
+            border: green 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello world</p>
+    <br>
+    <form hx-post="/href">
+        <input type="text" name="link" id="" placeholder="Type the link">
+        <input type="submit" value="Submit">
+    </form>
+
+    {{ range $key := . }}
+    <div class="wrap">
+        <img src="{{ $key }}" alt="image">
+        <br>
+    </div>
+    {{ end }}
+</body>
+</html>
